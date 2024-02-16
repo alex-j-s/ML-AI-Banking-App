@@ -5,6 +5,7 @@ from langchain_community.agent_toolkits import SQLDatabaseToolkit
 from langchain.agents import create_sql_agent
 from langchain_openai import ChatOpenAI
 from config import API_KEY
+from config import DB_CONNECTION_STRING
 
 app = Flask(__name__)
 model_name = "GPT 3.5"
@@ -12,7 +13,7 @@ model = ChatOpenAI(model_name="gpt-3.5-turbo-1106",api_key=API_KEY)
 app.secret_key = 'your_secret_key'  # Needed to use sessions
 
 # Database Connection String
-db = SQLDatabase.from_uri('cockroachdb://root@localhost:26257/bank?sslmode=disable')
+db = SQLDatabase.from_uri(DB_CONNECTION_STRING)
 
 # Connect to the database & LLM Model
 #model_name = "mistral"

@@ -43,6 +43,8 @@ add key to config.py
 ```bash
 flask run
 ```
+### Connecting to your local or Dedicated Cluster
+In order to connect to your CRDB Cluster either local or Dedicated, replace the db connection string in the config.py file.
 
 ### Usage
 After launching the app, you can:
